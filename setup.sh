@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Install uv
-if command -v "uv --version" &> /dev/null; then
+if command -v uv &> /dev/null; then
+    echo "uv already installed"
+else
     echo "Installing uv"
     curl -LsSf https://astral.sh/uv/install.sh | sh
-else
-    echo "uv already installed"
 fi
 
 # Initialize backend
@@ -14,4 +14,7 @@ if [ -d "./backend" ]; then
 else
     echo "Setting up backend..."
     uv init backend
+    cd backend
+    uv add django django-ninja
+    uv run django-admin startproject config .
 fi

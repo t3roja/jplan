@@ -4,7 +4,7 @@
 
 Frontend
 
-run script frontend_start.sh
+run script frontend_start.sh from repository root
 `./frontend_start.sh`
 
 ### Setup

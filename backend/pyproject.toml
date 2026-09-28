@@ -7,7 +7,10 @@ authors = [
     { name = "Jani Ronkainen", email = "ronkainen@hotmail.fi" }
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "django>=5.2.17",
+    "django-ninja>=1.7.1",
+]
 
 [project.scripts]
 backend = "backend:main"
@@ -15,3 +18,8 @@ backend = "backend:main"
 [build-system]
 requires = ["uv_build>=0.12.19,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.uv.workspace]
+members = [
+    "backend",
+]
